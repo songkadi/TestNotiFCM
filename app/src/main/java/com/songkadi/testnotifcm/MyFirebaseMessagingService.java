@@ -27,6 +27,7 @@ import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.google.gson.Gson;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private static final String TAG = "MyFirebaseMsgService";
@@ -37,8 +38,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
-            Log.i(TAG, "Message data payload: " + remoteMessage.getData());
-            sendNotification(remoteMessage.getData().toString());
+            Gson gson = new Gson();
+            String json = gson.toJson(remoteMessage.getData());
+            Log.i(TAG, "Message data payload: " + json);
+            sendNotification(json);
         }
 
         // Check if message contains a notification payload.

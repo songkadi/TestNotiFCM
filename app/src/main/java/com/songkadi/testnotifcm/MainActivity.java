@@ -10,16 +10,22 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = "MainActivity";
 
     //    private FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+    private FirebaseRemoteConfig mFirebaseRemoteConfig;
     private EditText content_main_text;
 
     @Override
@@ -49,6 +55,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         content_main_text = (EditText) findViewById(R.id.content_main_text);
+
+        mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
+        mFirebaseRemoteConfig.setConfigSettings(new FirebaseRemoteConfigSettings.Builder().build());
+        mFirebaseRemoteConfig.setDefaults(R.xml.common_config);
     }
 
     @Override
@@ -90,9 +100,16 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-//            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-//            Log.i(TAG, "Refreshed token: " + refreshedToken);
-//            FirebaseMessaging.getInstance().subscribeToTopic("monitor");
+            long cacheExpiration = 10; // in seconds.
+            mFirebaseRemoteConfig.fetch(cacheExpiration).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    mFirebaseRemoteConfig.activateFetched();
+                }
+            });
+
+            long threshold_warn = mFirebaseRemoteConfig.getLong("threshold_warn");
+            Log.i(TAG, String.valueOf(threshold_warn));
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {

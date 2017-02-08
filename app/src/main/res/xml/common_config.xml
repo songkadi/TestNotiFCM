@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>threshold_warn</key>
+        <value>90</value>
+    </entry>
+    <entry>
+        <key>threshold_critical</key>
+        <value>98</value>
+    </entry>
+</defaultsMap>

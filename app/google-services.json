@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "711843824137",
+    "firebase_url": "https://testnotifcm-40de9.firebaseio.com",
+    "project_id": "testnotifcm-40de9",
+    "storage_bucket": "testnotifcm-40de9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711843824137:android:427bb2f3b2e69c9f",
+        "android_client_info": {
+          "package_name": "com.songkadi.testnotifcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711843824137-me915lohgnap5017m0i4plhssbuops4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeoT3gEXW2Pc3hkufqkO4J1-b7bqcBppM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711843824137-933re27pc497fgmub5b01ao15uhnpmpu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.amosenterprise.rsa-mondial-th"
+              }
+            },
+            {
+              "client_id": "711843824137-me915lohgnap5017m0i4plhssbuops4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711843824137:android:386ed68945631a9a",
+        "android_client_info": {
+          "package_name": "testnotifcm.songkadi.com.testnotifcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711843824137-me915lohgnap5017m0i4plhssbuops4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeoT3gEXW2Pc3hkufqkO4J1-b7bqcBppM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711843824137-933re27pc497fgmub5b01ao15uhnpmpu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.amosenterprise.rsa-mondial-th"
+              }
+            },
+            {
+              "client_id": "711843824137-me915lohgnap5017m0i4plhssbuops4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

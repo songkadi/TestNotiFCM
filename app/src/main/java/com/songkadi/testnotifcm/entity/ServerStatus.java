@@ -12,6 +12,10 @@ public class ServerStatus {
     @Expose
     private String uptime;
 
+    @SerializedName("timestamp")
+    @Expose
+    private String timestamp;
+
     @SerializedName("serverName")
     @Expose
     private String serverName;
@@ -31,9 +35,11 @@ public class ServerStatus {
     public ServerStatus() {
     }
 
-    public ServerStatus(String startTime, String uptime, String serverName, String serverPort, StatusAmount memory, StatusAmount thread) {
+    public ServerStatus(String startTime, String uptime, String timestamp, String serverName, String serverPort, StatusAmount memory,
+                        StatusAmount thread) {
         this.startTime = startTime;
         this.uptime = uptime;
+        this.timestamp = timestamp;
         this.serverName = serverName;
         this.serverPort = serverPort;
         this.memory = memory;
@@ -54,6 +60,14 @@ public class ServerStatus {
 
     public void setUptime(String uptime) {
         this.uptime = uptime;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getServerName() {

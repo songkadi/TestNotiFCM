@@ -34,7 +34,7 @@ import com.songkadi.testnotifcm.entity.StatusAmount;
 
 import java.util.Map;
 
-public class MyFirebaseMessagingService extends FirebaseMessagingService {
+public class MessagingService extends FirebaseMessagingService {
     private static final String TAG = "MyFirebaseMsgService";
     private static final Gson gson = new Gson();
 
@@ -48,6 +48,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 ServerStatus serverStatus = new ServerStatus(
                         data.get("startTime"),
                         data.get("uptime"),
+                        data.get("timestamp"),
                         data.get("serverName"),
                         data.get("serverPort"),
                         gson.fromJson(data.get("memory"), StatusAmount.class),
